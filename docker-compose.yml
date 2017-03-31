@@ -1,0 +1,35 @@
+version: "2"
+
+services:
+  postgres:
+    image: postgres:9.5
+    volumes:
+      - /var/lib/postgresql/data
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+
+  cachet:
+    build: ./cachet-docker
+    ports:
+      - 80:8000
+    links:
+      - postgres:postgres
+    environment:
+      - DB_DRIVER=pgsql
+      - DB_HOST=postgres
+      - DB_DATABASE=postgres
+      - DB_USERNAME=postgres
+      - DB_PASSWORD=postgres
+    depends_on:
+      - postgres
+
+  jenkins:
+    image: jenkinsci/jenkins
+    volumes:
+      - /var/jenkins_home
+    depends_on:
+      - cachet
+    ports:
+      - 8080:8080
+      - 50000:50000

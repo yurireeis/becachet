@@ -1,0 +1,12 @@
+astroid==1.4.9
+behave==1.2.5
+isort==4.2.5
+lazy-object-proxy==1.2.2
+mccabe==0.5.3
+parse==1.6.6
+parse-type==0.3.4
+pep8==1.7.0
+requests==2.12.4
+selenium
+six==1.10.0
+wrapt==1.10.8
