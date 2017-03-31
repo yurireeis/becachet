@@ -10,7 +10,7 @@ services:
       - POSTGRES_PASSWORD=postgres
 
   cachet:
-    build: ./cachet-docker
+    build: ./cachet
     ports:
       - 80:8000
     links:
