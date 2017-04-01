@@ -78,6 +78,12 @@ RUN wget https://github.com/cachethq/Cachet/archive/${cachet_ver}.tar.gz && \
 COPY conf/.env.docker /var/www/html/.env
 COPY entrypoint.sh /sbin/entrypoint.sh
 
+USER root
+
+RUN chmod +x /sbin/entrypoint.sh
+
+USER www-data
+
 EXPOSE 8000
 
 CMD ["/sbin/entrypoint.sh"]
