@@ -6,7 +6,8 @@ Funcionalidade: Remover componente
   Quero remover um componente
 
   Contexto: usuário acessa o painel de controle
-    Dado que o usuário acessa o painel de controle
+    Dado que existe um componente cadastrado
+    E que o usuário acessa o painel de controle
 
   @remover_componente
   Cenário: Remover componente ativo

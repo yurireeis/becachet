@@ -8,6 +8,7 @@ def before_all(context):
     :type context: object
     """
     context.browser = get_webdriver()
+    context.browser.get('https://socialbase.socialbase.com.br')
 
 
 def after_feature(context, feature):

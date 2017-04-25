@@ -6,7 +6,8 @@ Funcionalidade: Atualizar componente
   Quero atualizar um componente
 
   Contexto: usuário acessa o painel de controle
-    Dado que o usuário acessa o painel de controle
+    Dado que existe um componente cadastrado
+    E que o usuário acessa o painel de controle
 
   @atualizar_componente_ativo_alterando_nome
   Cenário: Atualizar componente ativo alterando nome
