@@ -13,7 +13,7 @@ The original's project's are:
 
 To run the project ...
 
-# Running Cachet/Jenkins using this docker environment
+# First Steps
 
 1.  Clone the Behave-Cachet repo
 
@@ -35,20 +35,26 @@ To run the project ...
   pip install -r requirements.txt
   ```
 
-4. Clone the Cachet Docker project
+# Set up Behave
+
+
+# Running Cachet/Jenkins with docker
+
+
+1. Clone the Cachet Docker project
 
   ```shell
   git clone https://github.com/cachethq/Docker.git cachet-docker
   ```
 
-5. Build and up BehaveCachet project
+2. Build and up BehaveCachet project
 
   ```shell
   docker-compose build
   docker-compose up
   ```
 
-6. Initialize the database and set a key:
+3. Initialize the database and set a key:
 
   ```shell
   docker ps  # to grab cachet instance name or id
@@ -56,13 +62,13 @@ To run the project ...
 $ docker exec -i ${your_cachet_instance_name_or_id}  php artisan app:install
   ```
 
-7. Open a browser and access Cachet to setup:
+4. Open a browser and access Cachet to setup:
 
   ```browser
   http://<ipcachetisboundto>/setup
   ```
 
-8. Open the browser and configure Jenkins:
+5. Open the browser and configure Jenkins:
   ```browser
   http://<ipjenkinsisboundto>:8080
   ```
