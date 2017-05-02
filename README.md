@@ -37,6 +37,28 @@ To run the project ...
 
 # Set up Behave
 
+1. Download browser drivers binaries in some exec path (Linux):
+
+- [PhantomJS Driver](http://phantomjs.org/download.html)
+- [Chrome Driver](https://sites.google.com/a/chromium.org/chromedriver/downloads)
+
+ps.: Firefox Driver comes as default.
+
+2. Give exec permissions to browser drivers:
+
+example:
+
+```shell
+sudo chmod +x {driver path}/{drivers file}
+```
+
+3. Execute:
+
+ps.: in the project path
+
+```shell
+behave
+```
 
 # Running Cachet/Jenkins with docker
 
