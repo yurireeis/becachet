@@ -1,7 +1,8 @@
+import os
 import requests
 
-from utils.constants import CACHET_TOKEN
-from utils.constants import CACHET_URL
+CACHET_URL = os.getenv('CACHET_URL', None)
+CACHET_TOKEN = os.getenv('CACHET_TOKEN', None)
 
 
 class Cachet(object):

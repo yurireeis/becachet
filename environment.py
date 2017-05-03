@@ -1,4 +1,4 @@
-from utils.constants import CACHET_API
+from cachet.cachet import Cachet
 from utils.support import save_print, get_webdriver, get_incident_text
 
 
@@ -11,9 +11,9 @@ def before_all(context):
 
 
 def after_feature(context, feature):
-    if feature.status == "failed" and CACHET_API:
+    if feature.status == "failed":
         text = get_incident_text(context.failed_scenario)
-        CACHET_API.post_incidents(feature.name, text, 0, 0)
+        Cachet().post_incidents(feature.name, text, 0, 0)
 
 
 def before_step(context, step):
