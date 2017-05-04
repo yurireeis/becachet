@@ -1,8 +1,10 @@
+import os
+
 from selenium import webdriver
 from selenium.common.exceptions import NoSuchElementException
 from selenium.webdriver.support import expected_conditions as ec
 from selenium.webdriver.support.wait import WebDriverWait
-from utils.constants import NOW, PRINT_FORMAT, WEBDRIVER
+from utils.constants import NOW, PRINT_FORMAT
 
 
 def wait_for_element(driver, locator=None, seconds=10):
@@ -100,10 +102,12 @@ def get_webdriver():
     Return a webdriver object. You can call Chrome, Firefox or PhantomJS from command line
     :return:
     """
-    if WEBDRIVER == 'chromedriver':
+    driver = os.getenv('WEBDRIVER', None)
+
+    if driver == 'chromedriver':
         return webdriver.Chrome()
 
-    if WEBDRIVER == 'firefoxdriver':
+    elif driver == 'firefoxdriver':
         return webdriver.Firefox()
 
     return webdriver.PhantomJS()
@@ -116,6 +120,8 @@ def get_incident_text(scenarios):
     :rtype: str
     """
     msg = 'Automatized tests fails in the following scenarios:\n'
+
     for step in scenarios:
         msg += '- {};\n'.format(step)
+
     return msg

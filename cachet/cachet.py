@@ -1,16 +1,10 @@
-import os
 import requests
-
-CACHET_URL = os.getenv('CACHET_URL', None)
-CACHET_TOKEN = os.getenv('CACHET_TOKEN', None)
 
 
 class Cachet(object):
-    def __init__(self):
-        if not CACHET_URL and not CACHET_TOKEN:
-            raise Exception('Set CACHET_URL and  CACHET_TOKEN environment variables')
-        self.url = CACHET_URL
-        self.apiToken = CACHET_TOKEN
+    def __init__(self, url, token):
+        self.url = url
+        self.apiToken = token
 
     def __get_request(self, path):
         return requests.get(self.url + path)
